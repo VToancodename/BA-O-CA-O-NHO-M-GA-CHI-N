@@ -70,9 +70,9 @@ void nhapDiem(DiemSV) {
 	                        scanf("%f", &DiemSV->diemLT);
 	                        printf("Diem qua trinh: ");
 	                        scanf("%f", &DiemSV->diemQT);
-                            printf("Diem cong: ");
-                            scanf("%d", &DiemSV->diemCong);
-                            printf("Diem tong ket: ")
+                            	printf("Diem cong: ");
+                            	scanf("%d", &DiemSV->diemCong);
+                            	printf("Diem tong ket: ")
 	                        DiemSV -> diemTK = (DiemSV -> diemTH + DiemSV -> diemLT + DiemSV -> DiemQT + DiemSV-> diemCong) / 4;
                         }
 
