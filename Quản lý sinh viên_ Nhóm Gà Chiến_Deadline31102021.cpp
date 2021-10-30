@@ -4,7 +4,7 @@
 #include<time.h>
 #include<string.h>
 #define MAX 100
-#define MAXMenu 7
+#define MAXMenu 8
 
 typedef struct ttDate
 {
@@ -33,34 +33,64 @@ typedef struct ttDiemSinhVien
     float diemTH;
     float diemLT;
     float diemTK;  
-}
+}DiemSV;
 void HienThiMenu();
 int ChonMenu();
 void ThucHienMenu();
 void Nhap1SV(SV &x);
 void NhapSV(SV a[], int ID, int n);
 
+void NhapSV(SV a[], int ID, int n)
+{
+    printf("Nhap ID sinh vien: ");
+	scanf("%d", &SV.ID);
+	nhapHoTen(&SV.hoVaTen);
+	printf("Gioi tinh: ");
+	scanf("%s", sv.gioiTinh);
+	nhapDiem(&SV.DiemSV);
+    printf("Email cua sinh vien: ");
+    gets(email);
+	return sv;
+}
+
+void nhapHoTen(SV) {
+	                    printf("Ho sinh vien: ");
+	                    scanf("%s", tenSV->hoSV);
+	                    printf("Ten lot sinh vien: ");
+	                    getchar();
+	                    gets(tenSV->tenLot);
+	                    printf("Ten sinh vien: ");
+	                    scanf("%s", tenSV->tenSV);
+                    }
+
+void nhapDiem(DiemSV) {
+	                        printf("DIem thuc hanh: ");
+	                        scanf("%f", &DiemSV->diemTH);
+	                        printf("Diem ly thuyet: ");
+	                        scanf("%f", &DiemSV->diemLT);
+	                        printf("Diem qua trinh: ");
+	                        scanf("%f", &DiemSV->diemQT);
+                            printf("Diem cong: ");
+                            scanf("%d", &DiemSV->diemCong);
+                            printf("Diem tong ket: ")
+	                        DiemSV -> diemTK = (DiemSV -> diemTH + DiemSV -> diemLT + DiemSV -> DiemQT + DiemSV-> diemCong) / 4;
+                        }
+
 void HienThiMenu()
 {
-    int key;
-    SinhVien a[MAX];
-    int soluongSV = 0;
-    int ID = 0;
     char menu[][8] =   {
-                            while(true) 
-                            {
-                                printf("CHUONG TRINH QUAN LY SINH VIEN\n");
-                                printf("*************************MENU**************************\n");
-                                printf("**  1. Them sinh vien.                               **\n");
-                                printf("**  2. Cap nhat thong tin sinh vien theo ID.          **\n");
-                                printf("**  3. Xoa sinh vien theo ID.                         **\n");
-                                printf("**  4. Tim kiem sinh vien theo ten.                  **\n";                                
-                                printf("**  5. Sap xep sinh vien theo ten.                   **\n");
-                                printf("**  6. Hien thi danh sach sinh vien.                 **\n");
-                                printf("**  7. Ghi danh sach sinh vien vao file.             **\n");                                
-                                printf("*******************************************************\n");
-                                printf("Nhap tuy chon: ", key);
-                            }
+                            printf("CHUONG TRINH QUAN LY SINH VIEN\n");
+                            printf("*************************MENU**************************\n");
+                            printf("**  1. Them sinh vien.                               **\n");
+                            printf("**  2. Cap nhat thong tin sinh vien theo ID.         **\n");
+                            printf("**  3. Xoa sinh vien theo ID.                        **\n");
+                            printf("**  4. Tim kiem sinh vien theo ten.                   **\n";                                
+                            printf("**  5. Sap xep sinh vien theo ten.                   **\n");
+                            printf("**  6. Hien thi danh sach sinh vien.                 **\n");
+                            printf("**  7. Sap xep sinh vien theo diem trung binh        **\n");
+                            printf("**  8. Diem trung binh va hoc luc cua sinh vien      **\n");                                
+                            printf("*******************************************************\n");
+                            printf("Nhap tuy chon: ", key);                        
                             for(int i=0; i<MAXMenu; i++)
                             {
                                 printf("%s\n", menu[i]);
@@ -85,13 +115,19 @@ int ChonMenu()
 }
 
 void ThucHienMenu()
+
+
 {
     int chon;
     do
     {
         chon=ChonMenu();
         switch(chon)    {
-                            case
+                            case 1:
+                            		sv = nhapSV();
+				                    dssv[slsv++] = sv;
+				                    break;
+				
                         }   
     }while(chon!=MAXMenu);
     printf("\nKET THUC CHUONG TRINH\n")
